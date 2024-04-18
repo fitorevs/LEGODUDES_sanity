@@ -1,16 +1,16 @@
 import { useState } from "react";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
-export default function Header({ amount, cart, setCart }) {
+export default function Header({amount, cart, setCart}){
     const [toggle, setToggle] = useState(false)
 
-    const handleClick = () => {
+    const handleClick = () =>{
         setToggle(!toggle)
         console.log(toggle)
     }
 
-    return (
-        <header>
+    return(
+      <header>
             <Link to={"/"}><img id="logo" src="/website_images/LD_logo.svg" alt="LEGOdudes nettbutikk" /></Link>
             <button id="carttoggle" onClick={handleClick}>
                 <span id="cartcount">{amount}</span>
@@ -19,4 +19,4 @@ export default function Header({ amount, cart, setCart }) {
             <Cart toggle={toggle} cart={cart} setCart={setCart} />
         </header>
     )
-}
+  }
